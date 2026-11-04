@@ -63,5 +63,6 @@ class ExpenseEntry(Document):
 			else:
 				frappe.msgprint(f"Journal Entry <b>{je_name}</b> is already cancelled or in draft.")
 			self.db_set("journal_entry_id", None)
+			self.db_set("status", "Cancelled")
 		except Exception as e:
 			frappe.throw(f"Unable to cancel linked Journal Entry {je_name}: {str(e)}")

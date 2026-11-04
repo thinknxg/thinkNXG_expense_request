@@ -187,3 +187,4 @@ def make_journal_entry(expense_entry):
 
         je.insert()
         je.submit()
+        expense_entry.db_set("journal_entry_id", je.name)

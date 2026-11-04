@@ -3,53 +3,54 @@
   "docstatus": 0,
   "doctype": "Workflow",
   "document_type": "Expense Entry",
+  "enable_action_confirmation": 0,
   "is_active": 1,
   "modified": "2020-10-22 11:32:29.107073",
   "name": "Expense Approval",
   "override_status": 0,
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
   "send_email_alert": 1,
   "states": [
    {
     "allow_edit": "Accounts User",
+    "avoid_status_override": 0,
     "doc_status": "0",
+    "evaluate_as_expression": 0,
     "is_optional_state": 0,
     "message": "Please Approve",
     "next_action_email_template": "Expense Entry Approval",
-    "parent": "Expense Approval",
-    "parentfield": "states",
-    "parenttype": "Workflow",
+    "send_email": 0,
     "state": "Pending",
     "update_field": "status",
-    "update_value": "Pending"
+    "update_value": "Pending",
+    "workflow_builder_id": null
    },
    {
     "allow_edit": "Expense Approver",
+    "avoid_status_override": 0,
     "doc_status": "1",
+    "evaluate_as_expression": 0,
     "is_optional_state": 1,
     "message": "Rejected",
     "next_action_email_template": "Expense Entry Approval",
-    "parent": "Expense Approval",
-    "parentfield": "states",
-    "parenttype": "Workflow",
+    "send_email": 0,
     "state": "Rejected",
     "update_field": "status",
-    "update_value": "Rejected"
+    "update_value": "Rejected",
+    "workflow_builder_id": null
    },
    {
     "allow_edit": "Expense Approver",
+    "avoid_status_override": 0,
     "doc_status": "1",
+    "evaluate_as_expression": 0,
     "is_optional_state": 0,
     "message": "Approved",
     "next_action_email_template": "Expense Entry Approval",
-    "parent": "Expense Approval",
-    "parentfield": "states",
-    "parenttype": "Workflow",
+    "send_email": 0,
     "state": "Approved",
     "update_field": "status",
-    "update_value": "Approved"
+    "update_value": "Approved",
+    "workflow_builder_id": null
    }
   ],
   "transitions": [
@@ -59,10 +60,10 @@
     "allowed": "Accounts User",
     "condition": null,
     "next_state": "Approved",
-    "parent": "Expense Approval",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "state": "Pending"
+    "send_email_to_creator": 0,
+    "state": "Pending",
+    "transition_tasks": null,
+    "workflow_builder_id": null
    },
    {
     "action": "Reject",
@@ -70,12 +71,13 @@
     "allowed": "Expense Approver",
     "condition": null,
     "next_state": "Rejected",
-    "parent": "Expense Approval",
-    "parentfield": "transitions",
-    "parenttype": "Workflow",
-    "state": "Pending"
+    "send_email_to_creator": 0,
+    "state": "Pending",
+    "transition_tasks": null,
+    "workflow_builder_id": null
    }
   ],
+  "workflow_data": null,
   "workflow_name": "Expense Approval",
   "workflow_state_field": "status"
  }

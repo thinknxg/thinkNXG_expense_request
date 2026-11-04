@@ -81,7 +81,7 @@ def fetch_employees_by_expiry_range(from_date, to_date):
         "Residency Stamp": "custom_bls_expiry_date",
         "Civil ID": "custom_civil_id_expiry_date",
         "Contract": "custom_mol_contract_expiry_date",
-        "Passport": "custom_passport_expiry_date_",
+        "Passport": "custom_passport_expiry_date",
         "Visa": "custom_visa_date_of_expiry"    
     }
 
@@ -146,7 +146,7 @@ def fetch_employees_by_expiry_range(from_date, to_date):
             "employee_name": emp.employee_name,
             "custom_civil_id": emp.custom_civil_id_no,
             "visa_date_of_expiry": None,
-            "passport_expiry_date_":None,
+            "passport_expiry_date":None,
             "custom_passport_no":emp.custom_passport_no,
             "renewal_or_extend": "Renewal",
             "work_permit_expiry_date": None,
